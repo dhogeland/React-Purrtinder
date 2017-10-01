@@ -1,0 +1,22 @@
+.main-user-profile-div {
+  width: 20%;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+.main-user-profile-location {
+}
+.user-profile-image {
+  max-height: 20vh;
+  min-height: 100px;
+  border-radius: 50%;
+}
+.user-profile-name{
+  font-weight: bold;
+  font-size: xx-large;
+}

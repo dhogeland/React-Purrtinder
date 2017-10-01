@@ -1,0 +1,35 @@
+{
+  "name": "react-purrtinder",
+  "version": "1.0.0",
+  "description": "A Tinder clone for cats written in React",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start & nodemon",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhogeland/React-Purrtinder.git"
+  },
+  "author": "dhogeland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhogeland/React-Purrtinder/issues"
+  },
+  "homepage": "https://github.com/dhogeland/React-Purrtinder#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.5",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.0.14",
+    "redux": "^3.7.2",
+    "redux-promise-middleware": "^4.4.1"
+  },
+  "proxy": "http://localhost:3001"
+}
