@@ -1,0 +1,10 @@
+.favorite-button {
+  max-height: 10vh;
+  max-width: 10vw;
+  min-width: 10vw;
+  min-height: 10vh;
+  position: absolute;
+  right: 5vw;
+  bottom: 1vh;
+  border-radius: 50px;
+}

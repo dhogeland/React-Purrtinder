@@ -1,0 +1,10 @@
+.messages-link-button {
+  /*display: inline;*/
+  max-height: 10vh;
+  max-width: 10vw;
+  min-width: 10vw;
+  min-height: 10vh;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
