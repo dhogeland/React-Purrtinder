@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
+import NavBar from '../NavBar/NavBar';
+
 class Messages extends Component {
 
   render() {
     return (
       <div>
-        this will be the messages view.
+        <NavBar/>
       </div>
     )
   }

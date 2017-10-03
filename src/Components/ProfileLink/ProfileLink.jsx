@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './ProfileLink.css';
 
@@ -9,11 +10,13 @@ class ProfileLink extends Component {
   render() {
     return (
       <div>
-        <img
-          className="profile-link-button"
-          src={profileLinkButton}
-          alt={"silhouette of cat"}
-        />
+        <Link to="/user">
+          <img
+            className="profile-link-button"
+            src={profileLinkButton}
+            alt={"silhouette of cat"}
+          />
+        </Link>
       </div>
     )
   }

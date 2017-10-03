@@ -1,11 +1,23 @@
 .main-cat-profile-div {
   height: 60vh;
+  width: auto;
   position: absolute;
-  top: 10vh;
+  top: 15vh;
 }
-.cat-profile-pic {
+.cat-profile-pic-div {
   height: 70vh;
-  width: 95vw;
-  margin-left: 2vw;
-  margin-right: 2vw;
+  text-align: center;
+  width: 100vw;
+}
+.cat-profile-pic-credit-div {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.cat-pic-img {
+  text-align: center;
+  min-height: 68vh;
+  max-height: 68vh;
 }

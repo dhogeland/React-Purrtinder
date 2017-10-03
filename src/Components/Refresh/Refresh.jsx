@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 import './Refresh.css';
 
+import { connect } from 'react-redux';
+import { getCatPictures } from '../../Actions/actions';
+import { getHumanPictures } from '../../Actions/actions';
+
 import refreshButton from '../../Images/refreshButton.png';
 
 class Refresh extends Component {
@@ -9,14 +13,22 @@ class Refresh extends Component {
   render() {
     return (
       <div>
-        <img
-          className="refresh-button"
-          src={refreshButton}
-          alt={"refresh button"}
-        />
+        <button
+          onClick={this.props.getHumanPictures}
+          >
+            <img
+            className="refresh-button"
+            src={refreshButton}
+            alt={"refresh button"}
+          />
+        </button>
       </div>
     )
   }
 }
 
-export default Refresh;
+const mapDispatchToProps = {
+  getCatPictures,
+  getHumanPictures
+}
+export default connect(null, mapDispatchToProps)(Refresh);

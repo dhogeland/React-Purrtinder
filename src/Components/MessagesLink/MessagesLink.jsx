@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './MessagesLink.css';
 
@@ -9,11 +10,13 @@ class MessagesLink extends Component {
   render() {
     return (
       <div>
-        <img
-          className="messages-link-button"
-          src={messagesLinkButton}
-          alt={"silhouette of cat paw prints"}
-        />
+        <Link to="/messages">
+          <img
+            className="messages-link-button"
+            src={messagesLinkButton}
+            alt={"silhouette of cat paw prints"}
+          />
+        </Link>
       </div>
     )
   }
