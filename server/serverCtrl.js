@@ -17,7 +17,18 @@ module.exports = {
       //   }
 
     getCatPictures: function(req, res, next) {
-
+      console.log("on server getting cat picture")
+      const randomNumber1 = (Math.floor(Math.random() * 19) + 1);
+      const randomNumber2 = (Math.floor(Math.random() * 10));
+      axios.get(config.apiFirstPart + randomNumber1 + config.apiSecondPart)
+          .then(response => {
+            // console.log(response.data.results[randomNumber2])
+            res.status(200).json(response.data.results[randomNumber2])
+          })
+          .catch(err => {
+            console.log(err.response)
+            return err;
+          });
       },
 
       getHumanPictures: function(req, res, next) {
