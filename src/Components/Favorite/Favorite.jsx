@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Favorite.css';
 
@@ -9,11 +10,13 @@ class Favorite extends Component {
   render() {
     return (
       <div>
-        <img
-          className="favorite-button"
-          src={favoriteButton}
-          alt={"black star button"}
-        />
+        <Link to="/favorites">
+          <img
+            className="favorite-button"
+            src={favoriteButton}
+            alt={"black star button"}
+          />
+        </Link>
       </div>
     )
   }

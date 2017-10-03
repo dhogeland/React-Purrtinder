@@ -6,6 +6,7 @@ import { BrowserRouter as Router,
 
 import store from './Store/store';
 
+import FavoritesList from './Containers/FavoritesList/FavoritesList';
 import Home from './Containers/Home/Home';
 import Messages from './Containers/Messages/Messages';
 import UserProfile from './Containers/UserProfile/UserProfile';
@@ -16,6 +17,7 @@ ReactDOM.render(
       <Router>
         <div>
           <Route exact path="/" component={Home}/>
+          <Route exact path="/favorites" component={FavoritesList}/>
           <Route exact path="/messages" component={Messages}/>
           <Route exact path="/user" component={UserProfile}/>
         </div>
