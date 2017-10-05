@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-
 import { getCatPictures } from '../../Actions/actions';
-import { getHumanPictures } from '../../Actions/actions';
-
-import './CatProfiles.css';
 
 class CatProfiles extends Component {
   constructor(props) {
@@ -14,48 +10,29 @@ class CatProfiles extends Component {
       picturesList: this.props.picturesList
     }
   }
-  // componentWillMount() {
-  //   //setting up random people pictures due to Unsplash 50 call API limit
-  //   this.props.getCatPictures()
-  //     .then(response => {
-  //       console.log(response.value.data)
-  //       this.setState({picturesList: [...this.state.picturesList, {
-  //         description: response.value.data.description,
-  //         id: response.value.data.id,
-  //         link: response.value.data.user.links.html,
-  //         name: response.value.data.user.name,
-  //         picture: response.value.data.urls.small
-  //       }]
-  //     })
-  //   })
-  // }
-
   render() {
-    console.log("props", this.props.picturesList)
     return (
       <div className="main-cat-profile-div">
         {
           this.props.picturesList[0]
           ?
           <div className="cat-profile-pic-div">
-            <img
-              className="cat-pic-img"
-              src={this.props.picturesList[this.props.picturesList.length - 1].picture.large}
-              //src={this.props.picturesList[this.props.picturesList.length - 1].urls.small}
-              // alt={this.state.picturesList[0].description}
+            <img className="cat-pic-img"
+                  src={this.props.picturesList[this.props.picturesList.length - 1].urls.small}
+                  alt={this.props.picturesList[this.props.picturesList.length - 1].description}
             />
             <div className="cat-profile-pic-credit-div">
               &lt;Photo by
-              {/* <a
-                target="_blank"
-                href={`${this.state.picturesList[0].link}${this.state.creditToUnsplash}`}
-                > {this.state.picturesList[0].name}
+              <a target="_blank"
+                  rel="noopener noreferrer"
+                  href={`${this.props.picturesList[this.props.picturesList.length - 1].user.links.html}${this.state.creditToUnsplash}`}
+                > {this.props.picturesList[this.props.picturesList.length - 1].user.name}
               </a> /
-              <a
-                target="_blank"
-                href={`https://unsplash.com${this.state.creditToUnsplash}`}
+              <a target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://unsplash.com?utm_source=catinder&utm_medium=referral&utm_campaign=api-credit"
                 > Unsplash
-              </a> */}
+              </a>
                 &gt;
            </div>
           </div>
@@ -67,13 +44,12 @@ class CatProfiles extends Component {
   }
 }
 
-function mapStateToProps({humanPictures}) {
+function mapStateToProps({thePictures}) {
   return {
-     picturesList: humanPictures.myPictures,
+     picturesList: thePictures.myPictures,
   }
 }
 const mapDispatchToProps = {
-  getCatPictures,
-  getHumanPictures
+  getCatPictures
 }
 export default connect(mapStateToProps, mapDispatchToProps)(CatProfiles);

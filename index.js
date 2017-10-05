@@ -11,7 +11,6 @@ app.use(bodyParser.json());
 app.use('/', express.static(`${__dirname}/public`));
 
 app.get('/api/getCatPictures', serverCtrl.getCatPictures);
-app.get('/api/getHumanPictures', serverCtrl.getHumanPictures);
 
 app.listen(port, () => {
   console.log('Server listening on ' + port);

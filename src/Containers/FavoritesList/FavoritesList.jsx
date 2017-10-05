@@ -1,39 +1,21 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
 import NavBar from '../NavBar/NavBar';
-
-import './FavoritesList.css';
+import LikeList from '../../Components/LikeList/LikeList';
+import SuperLikeList from '../../Components/SuperLikeList/SuperLikeList';
 
 class FavoritesList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      creditToUnsplash: "?utm_source=catinder&utm_medium=referral&utm_campaign=api-credit",
-      picturesList: this.props.picturesList
-    }
-  }
-
   render() {
-    console.log(this.props)
     return (
       <div>
         <NavBar/>
           <div className="favorites-list-main-div">
-            Here are a few of your favorite things...
+            <h1>Here are a few of your favorite things...</h1>
+            <LikeList/>
+            <SuperLikeList/>
           </div>
       </div>
     )
   }
 }
 
-function mapStateToProps({humanPictures}) {
-  return {
-     picturesList: humanPictures.myPictures,
-  }
-}
-// const mapDispatchToProps = {
-//   getCatPictures,
-//   getHumanPictures
-// }
-export default connect(mapStateToProps, null)(FavoritesList);
+export default FavoritesList;

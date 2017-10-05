@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-
 import NavBar from '../NavBar/NavBar';
 
-import './Messages.css';
-
 class Messages extends Component {
-
   render() {
     return (
       <div>

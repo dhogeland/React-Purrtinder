@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
-
-import './Footer.css';
-
-import Refresh from '../../Components/Refresh/Refresh';
-import Nope from '../../Components/Nope/Nope';
-import SuperLike from '../../Components/SuperLike/SuperLike';
-import Like from '../../Components/Like/Like';
-import Favorite from '../../Components/Favorite/Favorite';
+import RefreshButton from '../../Components/RefreshButton/RefreshButton';
+import NopeButton from '../../Components/NopeButton/NopeButton';
+import SuperLikeButton from '../../Components/SuperLikeButton/SuperLikeButton';
+import LikeButton from '../../Components/LikeButton/LikeButton';
+import FavoriteButton from '../../Components/FavoriteButton/FavoriteButton';
 
 class Footer extends Component {
 
   render() {
     return (
       <div className="main-footer-div">
-        <Refresh/>
-        <Nope/>
-        <SuperLike/>
-        <Like/>
-        <Favorite/>
+        <RefreshButton/>
+        <NopeButton/>
+        <SuperLikeButton/>
+        <LikeButton/>
+        <FavoriteButton/>
       </div>
     )
   }

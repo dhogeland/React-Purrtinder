@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
 import { iSuperLikeThis } from '../../Actions/actions';
 import { getCatPictures } from '../../Actions/actions';
-import { getHumanPictures } from '../../Actions/actions';
-
-import './SuperLike.css';
-
 import superLikeButton from '../../Images/superLikeButton.png';
 
-class SuperLike extends Component {
+class SuperLikeButton extends Component {
   constructor(props) {
     super(props);
     this.handleSuperLike = this.handleSuperLike.bind(this);
@@ -18,35 +13,33 @@ class SuperLike extends Component {
   handleSuperLike() {
     const picture = this.props.picturesList;
     this.props.iSuperLikeThis(picture[picture.length - 1]);
-    this.props.getHumanPictures();
+    this.props.getCatPictures();
   }
 
   render() {
     return (
-      <div>
-        <button
-          onClick={this.handleSuperLike}
+      <span>
+        <button onMouseDown={e => e.preventDefault()}
+                onClick={this.handleSuperLike}
           >
-          <img
-            className="super-like-button"
-            src={superLikeButton}
-            alt={"blue lighting bolt button"}
+          <img className="super-like-button"
+                src={superLikeButton}
+                alt={"blue lighting bolt button"}
           />
         </button>
-      </div>
+      </span>
     )
   }
 }
 
-function mapStateToProps({humanPictures}) {
+function mapStateToProps({thePictures}) {
   return {
-     picturesList: humanPictures.myPictures,
+     picturesList: thePictures.myPictures,
   }
 }
 const mapDispatchToProps = {
   iSuperLikeThis,
-  getCatPictures,
-  getHumanPictures
+  getCatPictures
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SuperLike);
+export default connect(mapStateToProps, mapDispatchToProps)(SuperLikeButton);
