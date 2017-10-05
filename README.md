@@ -1,5 +1,13 @@
 # React-Purrtinder
-A Tinder clone with cats built with React
+A Tinder clone with cats built with React & Redux
+
+Config file with credential from Unsplash has been ignored.
+You will need to establish your own in order for this to work.
+<a href="https://unsplash.com/>unsplash.com/</a>
 
 
-Note, initial commit set up with people pictures due to API 50 call per hour limit
+# config.js
+module.exports = {
+  apiFirstPart: "https://api.unsplash.com/search/photos?page=",
+  apiSecondPart: "&query=cats&client_id=______YOUR_API_KEY_GOES_HERE________"
+}
