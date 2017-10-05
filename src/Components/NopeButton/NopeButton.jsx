@@ -1,52 +1,43 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
 import { iHateThis } from '../../Actions/actions';
 import { getCatPictures } from '../../Actions/actions';
-import { getHumanPictures } from '../../Actions/actions';
-
-import './Nope.css';
-
 import nopeButton from '../../Images/nopeButton.png';
 
-class Nope extends Component {
+class NopeButton extends Component {
   constructor(props) {
     super(props);
     this.handleNope = this.handleNope.bind(this);
   }
-
   handleNope() {
     const picture = this.props.picturesList;
     this.props.iHateThis(picture[picture.length - 1]);
-    this.props.getHumanPictures();
+    this.props.getCatPictures();
   }
-
   render() {
     return (
-      <div>
-        <button
-          onClick={this.handleNope}
+      <span>
+        <button onMouseDown={e => e.preventDefault()}
+                onClick={this.handleNope}
           >
-          <img
-            className="nope-button"
-            src={nopeButton}
-            alt={"red X button"}
+          <img className="nope-button"
+                src={nopeButton}
+                alt={"red X button"}
           />
         </button>
-      </div>
+      </span>
     )
   }
 }
 
-function mapStateToProps({humanPictures}) {
+function mapStateToProps({thePictures}) {
   return {
-     picturesList: humanPictures.myPictures,
+     picturesList: thePictures.myPictures,
   }
 }
 const mapDispatchToProps = {
   iHateThis,
-  getCatPictures,
-  getHumanPictures
+  getCatPictures
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Nope);
+export default connect(mapStateToProps, mapDispatchToProps)(NopeButton);

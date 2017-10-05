@@ -4,7 +4,6 @@ import { GET_PICTURES,
          I_HATE_THIS,
          I_SUPERLIKE_THIS } from '../Actions/actions';
 
-
 const initial = {
   myPictures: [],
   fetchingPictures: null,
@@ -15,10 +14,11 @@ const alteringState = (state, action) => {
   let stateCopy = Object.assign({}, state),
       actionCopy = Object.assign({}, action.payload);
   actionCopy.type = action.type;
-  // stateCopy.myPictures = stateCopy.myPictures.filter(picture => picture.id !== actionCopy.id);
-  stateCopy.myPictures = stateCopy.myPictures.filter(picture => picture.picture.large !== actionCopy.picture.large);
+  console.log('action on reducer', action)
+    console.log('actionCOPY on reducer', actionCopy)
+  stateCopy.myPictures = stateCopy.myPictures.filter(picture => picture.id !== actionCopy.id);
   stateCopy.myPictures.push(actionCopy);
-  return stateCopy
+  return stateCopy;
 }
 
 function getCatPictures(state = initial, action) {
@@ -38,27 +38,8 @@ function getCatPictures(state = initial, action) {
   }
 }
 
-function getHumanPictures(state = initial, action) {
-  switch(action.type) {
-    case I_HATE_THIS:
-    case I_LIKE_THIS:
-    case I_SUPERLIKE_THIS:
-      return alteringState(state, action);
-    case GET_PICTURES + '_PENDING':
-      return {...state, fetchingPictures: true}
-    case GET_PICTURES + '_FULFILLED':
-      return {...state, fetchingPictures: false, myPictures: [...state.myPictures, action.payload.data]}
-    case GET_PICTURES + '_REJECTED':
-      return {...state, fetchingPictures: false, error: action.payload}
-    default:
-    return state;
-  }
-}
-
-
 const reducer = combineReducers({
-  thePictures: getCatPictures,
-  humanPictures: getHumanPictures
+  thePictures: getCatPictures
 })
 
 export default reducer;

@@ -1,52 +1,43 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
 import { iLikeThis } from '../../Actions/actions';
 import { getCatPictures } from '../../Actions/actions';
-import { getHumanPictures } from '../../Actions/actions';
-
-import './Like.css';
-
 import likeButton from '../../Images/likeButton.jpeg';
 
-class Like extends Component {
+class LikeButton extends Component {
   constructor(props) {
     super(props);
     this.handleLike = this.handleLike.bind(this);
   }
-
   handleLike() {
     const picture = this.props.picturesList;
     this.props.iLikeThis(picture[picture.length - 1]);
-    this.props.getHumanPictures();
+    this.props.getCatPictures();
   }
-
   render() {
     return (
-      <div>
-        <button
-          onClick={this.handleLike}
+      <span>
+        <button onMouseDown={e => e.preventDefault()}
+                onClick={this.handleLike}
           >
-          <img
-            className="like-button-pic"
-            src={likeButton}
-            alt={"green heart button"}
+          <img className="like-button-pic"
+                src={likeButton}
+                alt={"green heart button"}
           />
         </button>
-      </div>
+      </span>
     )
   }
 }
 
-function mapStateToProps({humanPictures}) {
+function mapStateToProps({thePictures}) {
   return {
-     picturesList: humanPictures.myPictures,
+     picturesList: thePictures.myPictures,
   }
 }
 const mapDispatchToProps = {
   iLikeThis,
-  getCatPictures,
-  getHumanPictures
+  getCatPictures
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Like);
+export default connect(mapStateToProps, mapDispatchToProps)(LikeButton);

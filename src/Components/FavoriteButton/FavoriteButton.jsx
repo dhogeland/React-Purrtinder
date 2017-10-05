@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-import './Favorite.css';
-
 import favoriteButton from '../../Images/favoriteButton.png';
 
-class Favorite extends Component {
-
+class FavoriteButton extends Component {
   render() {
     return (
-      <div>
+      <span>
         <Link to="/favorites">
-          <img
-            className="favorite-button"
-            src={favoriteButton}
-            alt={"black star button"}
+          <img className="favorite-button"
+                src={favoriteButton}
+                alt={"black star button"}
           />
         </Link>
-      </div>
+      </span>
     )
   }
 }
 
-export default Favorite;
+export default FavoriteButton;

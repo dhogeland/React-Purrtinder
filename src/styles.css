@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+}
+body {
+  background-color: black;
+}
+div {
+  background-color: white;
+}
+span {
+  background-color: white;
+}
+a {
+  background-color: white;
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+}
+.main-site-div {
+  height: 100vh;
+  width: 40vw;
+  position: absolute;
+  left: 50%;
+  margin-left: -20vw;
+}
+.main-user-profile-div {
+  height: 200px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+.user-profile-image {
+  max-height: 20vh;
+  min-height: 10vh;
+  border-radius: 50%;
+  margin-left: -5%;
+}
+.messages-div {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+.main-footer-div {
+  width: 40vw;
+  position: absolute;
+  bottom: 1vh;
+  left: 50%;
+  margin-left: -20vw;
+  display: flex;
+  justify-content: space-around;
+}
+.refresh-button {
+  max-height: 9vh;
+  max-width: 6vw;
+  min-width: 6vw;
+  min-height: 9vh;
+  border-radius: 50%;
+  border: 4px solid black;
+}
+.nope-button {
+  max-height: 10vh;
+  max-width: 6vw;
+  min-width: 6vw;
+  min-height: 10vh;
+  border-radius: 50%;
+}
+.super-like-button {
+  max-height: 10vh;
+  max-width: 6vw;
+  min-width: 6vw;
+  min-height: 10vh;
+  border-radius: 50%;
+}
+.like-button-pic {
+  max-height: 10vh;
+  max-width: 6vw;
+  min-width: 6vw;
+  min-height: 10vh;
+  border-radius: 50%;
+}
+.favorite-button {
+  max-height: 10vh;
+  max-width: 6vw;
+  min-width: 6vw;
+  min-height: 10vh;
+  border-radius: 50%;
+}
+.main-cat-profile-div {
+  height: 74vh;
+  width: 40vw;
+  position: absolute;
+  top: 13vh;
+  left: 50%;
+  margin-left: -20vw;
+}
+.cat-profile-pic-div {
+  padding-bottom: 3vh;
+  height: 70vh;
+  text-align: center;
+  overflow: hidden;
+}
+.cat-profile-pic-credit-div {
+  text-align: center;
+}
+.cat-pic-img {
+  max-height: 100%;
+  max-width: 100%;
+
+}
+.nav-bar-main-div {
+  width: 40vw;
+  position: absolute;
+  top: 2vh;
+  left: 50%;
+  margin-left: -20vw;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+.profile-link-button {
+  max-height: 10vh;
+  max-width: 6vw;
+  min-width: 6vw;
+  min-height: 10vh;
+}
+.logo-button {
+  max-height: 10vh;
+  max-width: 6vw;
+  min-width: 6vw;
+  min-height: 10vh;
+}
+.messages-link-button {
+  max-height: 7vh;
+  max-width: 4vw;
+  min-width: 4vw;
+  min-height: 7vh;
+  margin-top: 1vh;
+  border: 6px solid black;
+  border-radius: 50%;
+}
+.favorites-list-main-div {
+  width: 40vw;
+  position: absolute;
+  top: 13vh;
+  left: 50%;
+  margin-left: -20vw;
+  text-align: center;
+}
+.favorites-list-likes-div {
+  padding-bottom: 3vh;
+  text-align: center;
+  overflow: hidden;
+}
+.favorites-list-super-likes-div {
+  padding-bottom: 3vh;
+  text-align: center;
+  overflow: hidden;
+}
+@media screen and (max-width: 899px) and (min-width: 769px) {
+  .main-site-div,
+   .main-footer-div,
+   .nav-bar-main-div,
+    .favorites-list-main-div,
+    .main-cat-profile-div {
+    width: 54vw;
+    margin-left: -27vw;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 500px) {
+  .main-site-div,
+   .main-footer-div,
+   .nav-bar-main-div,
+   .favorites-list-main-div,
+    .main-cat-profile-div {
+    width: 64vw;
+    margin-left: -32vw;
+  }
+}
+@media screen and (max-width: 499px) and (min-width: 50px) {
+  .main-site-div,
+   .main-footer-div,
+   .nav-bar-main-div,
+   .favorites-list-main-div,
+    .main-cat-profile-div {
+    width: 100vw;
+    margin-left: -50vw;
+  }
+}
