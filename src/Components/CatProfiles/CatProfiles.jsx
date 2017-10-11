@@ -22,18 +22,17 @@ class CatProfiles extends Component {
                   alt={this.props.picturesList[this.props.picturesList.length - 1].description}
             />
             <div className="cat-profile-pic-credit-div">
-              &lt;Photo by
+              <span>&lt; Photo by </span>
               <a target="_blank"
                   rel="noopener noreferrer"
                   href={`${this.props.picturesList[this.props.picturesList.length - 1].user.links.html}${this.state.creditToUnsplash}`}
-                > {this.props.picturesList[this.props.picturesList.length - 1].user.name}
-              </a> /
+                >{this.props.picturesList[this.props.picturesList.length - 1].user.name}
+              </a><span> / </span>
               <a target="_blank"
                   rel="noopener noreferrer"
                   href="https://unsplash.com?utm_source=catinder&utm_medium=referral&utm_campaign=api-credit"
-                > Unsplash
-              </a>
-                &gt;
+                >Unsplash
+              </a><span> &gt;</span>
            </div>
           </div>
           :
